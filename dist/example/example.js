@@ -2180,20 +2180,20 @@
 	});
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /*
-	                                                                                                                                                                                                                                                                              * Tencent is pleased to support the open source community by making WeUI.js available.
-	                                                                                                                                                                                                                                                                              * 
-	                                                                                                                                                                                                                                                                              * Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
-	                                                                                                                                                                                                                                                                              * 
-	                                                                                                                                                                                                                                                                              * Licensed under the MIT License (the "License"); you may not use this file except in compliance
-	                                                                                                                                                                                                                                                                              * with the License. You may obtain a copy of the License at
-	                                                                                                                                                                                                                                                                              * 
-	                                                                                                                                                                                                                                                                              *       http://opensource.org/licenses/MIT
-	                                                                                                                                                                                                                                                                              * 
-	                                                                                                                                                                                                                                                                              * Unless required by applicable law or agreed to in writing, software distributed under the License is
-	                                                                                                                                                                                                                                                                              * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-	                                                                                                                                                                                                                                                                              * either express or implied. See the License for the specific language governing permissions and
-	                                                                                                                                                                                                                                                                              * limitations under the License.
-	                                                                                                                                                                                                                                                                              */
+	                                                                                                                                                                                                                                                                               * Tencent is pleased to support the open source community by making WeUI.js available.
+	                                                                                                                                                                                                                                                                               *
+	                                                                                                                                                                                                                                                                               * Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+	                                                                                                                                                                                                                                                                               *
+	                                                                                                                                                                                                                                                                               * Licensed under the MIT License (the "License"); you may not use this file except in compliance
+	                                                                                                                                                                                                                                                                               * with the License. You may obtain a copy of the License at
+	                                                                                                                                                                                                                                                                               *
+	                                                                                                                                                                                                                                                                               *       http://opensource.org/licenses/MIT
+	                                                                                                                                                                                                                                                                               *
+	                                                                                                                                                                                                                                                                               * Unless required by applicable law or agreed to in writing, software distributed under the License is
+	                                                                                                                                                                                                                                                                               * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+	                                                                                                                                                                                                                                                                               * either express or implied. See the License for the specific language governing permissions and
+	                                                                                                                                                                                                                                                                               * limitations under the License.
+	                                                                                                                                                                                                                                                                               */
 
 	var _util = __webpack_require__(4);
 
@@ -2251,6 +2251,14 @@
 	        yes = _util2.default.noop;
 	    }
 
+	    if ((typeof content === 'undefined' ? 'undefined' : _typeof(content)) === 'object') {
+	        if (content.statusCode == 209) {
+	            yes();
+	            return;
+	        }
+	        content = content.errorMsg || content.error_msg;
+	    }
+
 	    options = _util2.default.extend({
 	        content: content,
 	        buttons: [{
@@ -2276,20 +2284,20 @@
 	});
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /*
-	                                                                                                                                                                                                                                                                              * Tencent is pleased to support the open source community by making WeUI.js available.
-	                                                                                                                                                                                                                                                                              * 
-	                                                                                                                                                                                                                                                                              * Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
-	                                                                                                                                                                                                                                                                              * 
-	                                                                                                                                                                                                                                                                              * Licensed under the MIT License (the "License"); you may not use this file except in compliance
-	                                                                                                                                                                                                                                                                              * with the License. You may obtain a copy of the License at
-	                                                                                                                                                                                                                                                                              * 
-	                                                                                                                                                                                                                                                                              *       http://opensource.org/licenses/MIT
-	                                                                                                                                                                                                                                                                              * 
-	                                                                                                                                                                                                                                                                              * Unless required by applicable law or agreed to in writing, software distributed under the License is
-	                                                                                                                                                                                                                                                                              * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-	                                                                                                                                                                                                                                                                              * either express or implied. See the License for the specific language governing permissions and
-	                                                                                                                                                                                                                                                                              * limitations under the License.
-	                                                                                                                                                                                                                                                                              */
+	                                                                                                                                                                                                                                                                               * Tencent is pleased to support the open source community by making WeUI.js available.
+	                                                                                                                                                                                                                                                                               *
+	                                                                                                                                                                                                                                                                               * Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+	                                                                                                                                                                                                                                                                               *
+	                                                                                                                                                                                                                                                                               * Licensed under the MIT License (the "License"); you may not use this file except in compliance
+	                                                                                                                                                                                                                                                                               * with the License. You may obtain a copy of the License at
+	                                                                                                                                                                                                                                                                               *
+	                                                                                                                                                                                                                                                                               *       http://opensource.org/licenses/MIT
+	                                                                                                                                                                                                                                                                               *
+	                                                                                                                                                                                                                                                                               * Unless required by applicable law or agreed to in writing, software distributed under the License is
+	                                                                                                                                                                                                                                                                               * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+	                                                                                                                                                                                                                                                                               * either express or implied. See the License for the specific language governing permissions and
+	                                                                                                                                                                                                                                                                               * limitations under the License.
+	                                                                                                                                                                                                                                                                               */
 
 	var _util = __webpack_require__(4);
 
@@ -2346,6 +2354,14 @@
 	    } else if ((typeof no === 'undefined' ? 'undefined' : _typeof(no)) === 'object') {
 	        options = no;
 	        no = _util2.default.noop;
+	    }
+
+	    if ((typeof content === 'undefined' ? 'undefined' : _typeof(content)) === 'object') {
+	        if (content.statusCode == 209) {
+	            yes();
+	            return;
+	        }
+	        content = content.errorMsg || content.error_msg;
 	    }
 
 	    options = _util2.default.extend({
