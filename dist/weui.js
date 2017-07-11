@@ -1,5 +1,5 @@
 /*!
- * weui.js v2.0.0 (https://weui.io)
+ * weui.js v2.0.1 (https://weui.io)
  * Copyright 2017, wechat ui team
  * MIT license
  */
@@ -929,7 +929,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            yes();
 	            return;
 	        }
-	        content = content.errorMsg || content.error_msg;
+	        content = content.errorMsg || content.error_msg || content.message;
 	    }
 
 	    options = _util2.default.extend({
@@ -1034,7 +1034,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            yes();
 	            return;
 	        }
-	        content = content.errorMsg || content.error_msg;
+	        content = content.errorMsg || content.error_msg || content.message;
 	    }
 
 	    options = _util2.default.extend({

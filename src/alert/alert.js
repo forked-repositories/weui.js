@@ -64,7 +64,7 @@ function alert(content = '', yes = $.noop, options) {
             yes()
             return
         }
-        content = content.errorMsg || content.error_msg
+        content = content.errorMsg || content.error_msg || content.message
     }
 
     options = $.extend({
