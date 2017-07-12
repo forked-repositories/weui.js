@@ -1585,7 +1585,7 @@
 	        $dialog.addClass('weui-animate-fade-out').on('animationend webkitAnimationEnd', function () {
 	            $dialogWrap.remove();
 	            // _sington = false;
-	            callback && callback();
+	            typeof callback === 'function' && callback();
 	        });
 	    }
 	    function hide(callback) {
@@ -1607,7 +1607,7 @@
 	    });
 
 	    _sington = $dialogWrap[0];
-	    _sington.hide = hide;
+	    _sington.hide = hide.bind(_sington);
 	    return _sington;
 	}
 	exports.default = dialog;
@@ -2511,14 +2511,14 @@
 
 	/*
 	* Tencent is pleased to support the open source community by making WeUI.js available.
-	* 
+	*
 	* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
-	* 
+	*
 	* Licensed under the MIT License (the "License"); you may not use this file except in compliance
 	* with the License. You may obtain a copy of the License at
-	* 
+	*
 	*       http://opensource.org/licenses/MIT
-	* 
+	*
 	* Unless required by applicable law or agreed to in writing, software distributed under the License is
 	* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 	* either express or implied. See the License for the specific language governing permissions and
@@ -2565,7 +2565,7 @@
 	        $loading.addClass('weui-animate-fade-out').on('animationend webkitAnimationEnd', function () {
 	            $loadingWrap.remove();
 	            _sington = false;
-	            callback && callback();
+	            typeof callback === 'function' && callback();
 	        });
 	    }
 	    function hide(callback) {
@@ -2577,7 +2577,7 @@
 	    $mask.addClass('weui-animate-fade-in');
 
 	    _sington = $loadingWrap[0];
-	    _sington.hide = hide;
+	    _sington.hide = hide.bind(_sington);
 	    return _sington;
 	}
 	exports.default = loading;
@@ -2611,14 +2611,14 @@
 
 	/*
 	* Tencent is pleased to support the open source community by making WeUI.js available.
-	* 
+	*
 	* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
-	* 
+	*
 	* Licensed under the MIT License (the "License"); you may not use this file except in compliance
 	* with the License. You may obtain a copy of the License at
-	* 
+	*
 	*       http://opensource.org/licenses/MIT
-	* 
+	*
 	* Unless required by applicable law or agreed to in writing, software distributed under the License is
 	* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 	* either express or implied. See the License for the specific language governing permissions and
@@ -2694,7 +2694,7 @@
 	        $actionSheetMask.addClass('weui-animate-fade-out').on('animationend webkitAnimationEnd', function () {
 	            $actionSheetWrap.remove();
 	            _sington = false;
-	            callback && callback();
+	            typeof callback === 'function' && callback();
 	        });
 	    }
 	    function hide(callback) {
@@ -2722,7 +2722,7 @@
 	    });
 
 	    _sington = $actionSheetWrap[0];
-	    _sington.hide = hide;
+	    _sington.hide = hide.bind(_sington);
 	    return _sington;
 	}
 	exports.default = actionSheet;
@@ -2756,14 +2756,14 @@
 
 	/*
 	* Tencent is pleased to support the open source community by making WeUI.js available.
-	* 
+	*
 	* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
-	* 
+	*
 	* Licensed under the MIT License (the "License"); you may not use this file except in compliance
 	* with the License. You may obtain a copy of the License at
-	* 
+	*
 	*       http://opensource.org/licenses/MIT
-	* 
+	*
 	* Unless required by applicable law or agreed to in writing, software distributed under the License is
 	* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 	* either express or implied. See the License for the specific language governing permissions and
@@ -2789,7 +2789,7 @@
 	 *     className: 'custom-classname',
 	 *     callback: function(){ console.log('close') }
 	 * });
-	 * 
+	 *
 	 * // 主动关闭
 	 * var $topTips = weui.topTips('请填写正确的字段');
 	 * $topTips.hide(function() {
@@ -2823,7 +2823,7 @@
 	        _hide = _util2.default.noop; // 防止二次调用导致报错
 
 	        $topTips.remove();
-	        callback && callback();
+	        typeof callback === 'function' && callback();
 	        options.callback();
 	        _toptips = null;
 	    }
@@ -2842,7 +2842,7 @@
 	    };
 	    _toptips.timeout = setTimeout(hide, options.duration);
 
-	    $topTips[0].hide = hide;
+	    $topTips[0].hide = hide.bind($topTips[0]);
 	    return $topTips[0];
 	}
 	exports.default = topTips;
@@ -4012,14 +4012,14 @@
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /*
 	                                                                                                                                                                                                                                                                              * Tencent is pleased to support the open source community by making WeUI.js available.
-	                                                                                                                                                                                                                                                                              * 
+	                                                                                                                                                                                                                                                                              *
 	                                                                                                                                                                                                                                                                              * Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
-	                                                                                                                                                                                                                                                                              * 
+	                                                                                                                                                                                                                                                                              *
 	                                                                                                                                                                                                                                                                              * Licensed under the MIT License (the "License"); you may not use this file except in compliance
 	                                                                                                                                                                                                                                                                              * with the License. You may obtain a copy of the License at
-	                                                                                                                                                                                                                                                                              * 
+	                                                                                                                                                                                                                                                                              *
 	                                                                                                                                                                                                                                                                              *       http://opensource.org/licenses/MIT
-	                                                                                                                                                                                                                                                                              * 
+	                                                                                                                                                                                                                                                                              *
 	                                                                                                                                                                                                                                                                              * Unless required by applicable law or agreed to in writing, software distributed under the License is
 	                                                                                                                                                                                                                                                                              * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 	                                                                                                                                                                                                                                                                              * either express or implied. See the License for the specific language governing permissions and
@@ -4266,7 +4266,7 @@
 	        $picker.find('.weui-picker').addClass('weui-animate-slide-down').on('animationend webkitAnimationEnd', function () {
 	            $picker.remove();
 	            _sington = false;
-	            callback && callback();
+	            typeof callback === 'function' && callback();
 	        });
 	    }
 	    function hide(callback) {
@@ -5056,14 +5056,14 @@
 
 	/*
 	* Tencent is pleased to support the open source community by making WeUI.js available.
-	* 
+	*
 	* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
-	* 
+	*
 	* Licensed under the MIT License (the "License"); you may not use this file except in compliance
 	* with the License. You may obtain a copy of the License at
-	* 
+	*
 	*       http://opensource.org/licenses/MIT
-	* 
+	*
 	* Unless required by applicable law or agreed to in writing, software distributed under the License is
 	* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
 	* either express or implied. See the License for the specific language governing permissions and
@@ -5110,7 +5110,7 @@
 	        $gallery.addClass('weui-animate-fade-out').on('animationend webkitAnimationEnd', function () {
 	            $gallery.remove();
 	            _sington = false;
-	            callback && callback();
+	            typeof callback === 'function' && callback();
 	        });
 	    }
 	    function hide(callback) {
@@ -5128,7 +5128,7 @@
 	    $gallery.show().addClass('weui-animate-fade-in');
 
 	    _sington = $gallery[0];
-	    _sington.hide = hide;
+	    _sington.hide = hide.bind(_sington);
 	    return _sington;
 	}
 	exports.default = gallery;

@@ -1,6 +1,6 @@
 {
   "name": "weui.js",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "weui.js",
   "main": "./dist/weui.min.js",
   "scripts": {
@@ -18,8 +18,8 @@
     "javascript",
     "zepto"
   ],
-  "homepage": "https://weui.io",
-  "author": "wechat ui team",
+  "homepage": "https://github.com/icatholiccloud/weui.js",
+  "author": "i@zhuweiyou.com",
   "license": "MIT",
   "dependencies": {
     "balajs": "^0.1.9",

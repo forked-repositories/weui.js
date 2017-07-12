@@ -83,7 +83,7 @@ function dialog(options = {}) {
             .on('animationend webkitAnimationEnd', function () {
                 $dialogWrap.remove();
                 // _sington = false;
-                callback && callback();
+                typeof callback === 'function' && callback();
             });
     }
     function hide(callback){ _hide(callback); }
@@ -103,7 +103,7 @@ function dialog(options = {}) {
     });
 
     _sington = $dialogWrap[0];
-    _sington.hide = hide;
+    _sington.hide = hide.bind(_sington);
     return _sington;
 }
 export default dialog;
